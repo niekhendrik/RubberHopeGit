@@ -30,22 +30,40 @@
 			height: 100%;
 		}
 		.logo-overlay {
-			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
 			width: 100%;
 			height: 100%;
-			transition: filter 0.2s ease-in-out;
+			transition: opacity 0.3s ease-in-out;
 		}
-		.logo-link:hover .logo-overlay {
-			/* This bumps up the brightness and contrast to create a clean white tint/fade effect on the logo graphics only */
-			filter: brightness(2.5) contrast(1.5);
+		/* The initial red logo */
+		.logo-overlay.red {
+			opacity: 1;
 		}
+		/* The new blue logo (hidden by default) */
+		.logo-overlay.blue {
+			opacity: 0;
+		}
+
+		/* When hovering the link, flip the opacity */
+		.logo-link:hover .logo-overlay.red {
+			opacity: 0;
+		}
+		.logo-link:hover .logo-overlay.blue {
+			opacity: 1;
+		}
+
 	</style>
 </head>
 <body>
 	<div class="image-wrapper">
 		<img src="background-text.png" alt="Click to enter" class="static-bg">
 		<a href="https://797682-45.myshopify.com/" class="logo-link">
-			<img src="logo.png" alt="Rubberhope Logo" class="logo-overlay">
+			<!-- Stack the red logo first -->
+			<img src="logo.png" alt="Rubberhope Logo" class="logo-overlay red">
+			<!-- Stack the blue logo second -->
+			<img src="logo-hover.png" alt="Rubberhope Logo Hover" class="logo-overlay blue">
 		</a>
 	</div>
 </body>
