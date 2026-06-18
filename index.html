@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Rubberhope</title>
+	<style>
+		body {
+			background-color: #FFF4DC;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			margin: 0;
+		}
+		.image-wrapper {
+			position: relative;
+			display: inline-block;
+		}
+		.static-bg {
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+		.logo-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			transition: filter 0.2s ease-in-out;
+		}
+		.logo-overlay:hover {
+			filter: brightness(1.25);
+		}
+	</style>
+</head>
+<body>
+	<div class="image-wrapper">
+		<img src="background-text.png" alt="Click to enter" class="static-bg">
+		<a href="https://797682-45.myshopify.com/">
+			<img src="logo.png" alt="Rubberhope Logo" class="logo-overlay">
+		</a>
+	</div>
+</body>
+</html>
