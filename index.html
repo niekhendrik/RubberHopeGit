@@ -29,24 +29,15 @@
 			width: 100%;
 			height: 100%;
 		}
-		.logo-link::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: white;
-			opacity: 0;
-			transition: opacity 0.2s ease-in-out;
-		}
-		.logo-link:hover::after {
-			opacity: 0.4; /* Change this (between 0.1 and 1.0) to make the white fade stronger or softer */
-		}
 		.logo-overlay {
 			display: block;
 			width: 100%;
 			height: 100%;
+			transition: filter 0.2s ease-in-out;
+		}
+		.logo-link:hover .logo-overlay {
+			/* This bumps up the brightness and contrast to create a clean white tint/fade effect on the logo graphics only */
+			filter: brightness(1.5) contrast(1.2);
 		}
 	</style>
 </head>
