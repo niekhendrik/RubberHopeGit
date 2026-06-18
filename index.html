@@ -11,17 +11,21 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			height: 100vh;
+			height: 100dvh;
 			margin: 0;
+			overflow: hidden;
 		}
 		.image-wrapper {
 			position: relative;
-			display: inline-block;
+			width: 90vw;
+			max-width: 500px;
+			aspect-ratio: 1 / 1;
 		}
 		.static-bg {
 			display: block;
-			max-width: 100%;
-			height: auto;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
 		}
 		.logo-link {
 			position: absolute;
@@ -36,6 +40,7 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
+			object-fit: contain;
 		}
 		/* The initial red logo */
 		.logo-overlay.red {
@@ -53,16 +58,13 @@
 		.logo-link:hover .logo-overlay.blue {
 			opacity: 1;
 		}
-
 	</style>
 </head>
 <body>
 	<div class="image-wrapper">
 		<img src="background-text.png" alt="Click to enter" class="static-bg">
 		<a href="https://797682-45.myshopify.com/" class="logo-link">
-			<!-- Stack the red logo first -->
 			<img src="logo.png" alt="Rubberhope Logo" class="logo-overlay red">
-			<!-- Stack the blue logo second -->
 			<img src="logo-hover.png" alt="Rubberhope Logo Hover" class="logo-overlay blue">
 		</a>
 	</div>
